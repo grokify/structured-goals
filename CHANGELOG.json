@@ -1,0 +1,38 @@
+{
+  "ir_version": "1.0",
+  "project": "structured-goals",
+  "repository": "https://github.com/grokify/structured-goals",
+  "versioning": "semver",
+  "commit_convention": "conventional",
+  "maintainers": ["grokify", "johncwang@gmail.com"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-01-25",
+      "highlights": [
+        { "description": "Initial release of structured-goals with V2MOM and OKR support" },
+        { "description": "Integration with structureddocs for consistent Marp slide rendering" }
+      ],
+      "added": [
+        { "description": "V2MOM (Vision, Values, Methods, Obstacles, Measures) document types and validation" },
+        { "description": "OKR (Objectives and Key Results) document types with progress tracking and validation" },
+        { "description": "Structure modes: flat (traditional V2MOM), nested (OKR-aligned), and hybrid" },
+        { "description": "Terminology support: v2mom, okr, and hybrid naming conventions" },
+        { "description": "Marp slide renderer using structureddocs shared themes and template functions" },
+        { "description": "Three built-in themes: `default`, `corporate`, `minimal`" },
+        { "description": "JSON Schema (Draft-07) for V2MOM document validation" },
+        { "description": "CLI commands: `v2mom init`, `v2mom validate`, `v2mom generate marp`" },
+        { "description": "Example documents: product-v2mom.json, minimal-v2mom.json, agentplexus-v2mom.json" }
+      ],
+      "documentation": [
+        { "description": "README with quick start guide, CLI reference, and library usage examples" },
+        { "description": "Product Requirements Document (PRD.md)" },
+        { "description": "Technical Requirements Document (TRD.md)" },
+        { "description": "Roadmap (ROADMAP.md) with phased implementation plan" }
+      ],
+      "dependencies": [
+        { "description": "Add github.com/grokify/structureddocs v0.1.0 for shared Marp utilities" }
+      ]
+    }
+  ]
+}
