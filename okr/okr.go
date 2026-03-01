@@ -72,11 +72,13 @@ type Objective struct {
 	Title       string      `json:"title"`
 	Description string      `json:"description,omitempty"`
 	Owner       string      `json:"owner,omitempty"`
+	Timeframe   string      `json:"timeframe,omitempty"` // Target period (e.g., "Q2 2026", "H1 2026", "FY2026")
 	Status      string      `json:"status,omitempty"`
 	KeyResults  []KeyResult `json:"keyResults"`
-	Progress    float64     `json:"progress,omitempty"` // Calculated from key results (0.0-1.0)
-	Risks       []Risk      `json:"risks,omitempty"`    // Objective-specific risks
-	ParentID    string      `json:"parentId,omitempty"` // Link to parent/company objective
+	Progress    float64     `json:"progress,omitempty"`    // Calculated from key results (0.0-1.0)
+	Risks       []Risk      `json:"risks,omitempty"`       // Objective-specific risks
+	ParentID    string      `json:"parentId,omitempty"`    // Link to parent/company objective
+	AlignedWith []string    `json:"alignedWith,omitempty"` // IDs of objectives this supports (company/team OKRs)
 }
 
 // KeyResult represents a measurable outcome for an Objective.

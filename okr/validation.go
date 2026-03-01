@@ -26,6 +26,7 @@ type ValidationOptions struct {
 	MaxObjectives       int  // Maximum objectives per document (default: 5, 0 = no limit)
 	RequireTargets      bool // Require target values on key results
 	ValidateScoreRange  bool // Ensure scores are in 0.0-1.0 range
+	RequireTimeframe    bool // Require timeframe on active objectives
 }
 
 // DefaultValidationOptions returns sensible defaults.
@@ -38,6 +39,7 @@ func DefaultValidationOptions() *ValidationOptions {
 		MaxObjectives:       5,
 		RequireTargets:      false,
 		ValidateScoreRange:  true,
+		RequireTimeframe:    false,
 	}
 }
 
@@ -51,6 +53,7 @@ func StrictValidationOptions() *ValidationOptions {
 		MaxObjectives:       5,
 		RequireTargets:      true,
 		ValidateScoreRange:  true,
+		RequireTimeframe:    true,
 	}
 }
 
@@ -146,6 +149,17 @@ func validateObjective(obj Objective, path string, opts *ValidationOptions) []Va
 			Message: fmt.Sprintf("progress must be between 0.0 and 1.0, got %.2f", obj.Progress),
 			IsError: true,
 		})
+	}
+
+	// Validate timeframe for active objectives
+	if opts.RequireTimeframe && strings.TrimSpace(obj.Timeframe) == "" {
+		if obj.Status == "" || obj.Status == StatusActive {
+			errs = append(errs, ValidationError{
+				Path:    path + ".timeframe",
+				Message: "timeframe is required for active objectives (e.g., Q2 2026, H1 2026)",
+				IsError: false, // Warning
+			})
+		}
 	}
 
 	return errs
