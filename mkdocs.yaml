@@ -1,0 +1,78 @@
+site_name: Structured Goals
+site_description: Go library for V2MOM, OKR, and DMAIC strategic planning frameworks
+site_author: John Wang
+site_url: https://grokify.github.io/structured-goals/
+
+repo_name: grokify/structured-goals
+repo_url: https://github.com/grokify/structured-goals
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+  - Frameworks:
+      - V2MOM: frameworks/v2mom.md
+      - OKR: frameworks/okr.md
+      - DMAIC: frameworks/dmaic.md
+  - Renderers:
+      - Overview: renderers/overview.md
+      - Marp Slides: renderers/marp.md
+      - Pandoc PDF: renderers/pandoc.md
+  - CLI Reference:
+      - v2mom: cli/v2mom.md
+      - genschema: cli/genschema.md
+      - genpandoc: cli/genpandoc.md
+  - JSON Schema:
+      - Overview: schema/overview.md
+      - V2MOM Schema: schema/v2mom.md
+      - OKR Schema: schema/okr.md
+      - DMAIC Schema: schema/dmaic.md
+  - Examples:
+      - V2MOM Examples: examples/v2mom.md
+      - DMAIC Examples: examples/dmaic.md
+  - API Reference: api.md
+  - Releases:
+      - v0.2.0: releases/v0.2.0.md
+      - v0.1.0: releases/v0.1.0.md
+  - Changelog: changelog.md

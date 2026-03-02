@@ -1,11 +1,43 @@
 {
-  "ir_version": "1.0",
+  "irVersion": "1.0",
   "project": "structured-goals",
   "repository": "https://github.com/grokify/structured-goals",
   "versioning": "semver",
-  "commit_convention": "conventional",
+  "commitConvention": "conventional",
   "maintainers": ["grokify", "johncwang@gmail.com"],
   "releases": [
+    {
+      "version": "v0.2.0",
+      "date": "2026-03-02",
+      "highlights": [
+        { "description": "DMAIC (Define, Measure, Analyze, Improve, Control) framework with full Six Sigma support" },
+        { "description": "Pandoc renderer for PDF-ready Markdown with YAML frontmatter" },
+        { "description": "JSON Schema generation from Go types" },
+        { "description": "MkDocs documentation site with Material theme" }
+      ],
+      "added": [
+        { "description": "DMAIC core package with metrics tracking, SPC, and Six Sigma support", "commit": "c0784d5" },
+        { "description": "Marp renderer for DMAIC presentation slides", "commit": "b48486f" },
+        { "description": "Pandoc renderer with sans-serif fonts, 2cm margins, LuaLaTeX support", "commit": "b48486f" },
+        { "description": "JSON Schema generation from Go types using invopop/jsonschema", "commit": "e86794d" },
+        { "description": "genschema CLI tool for regenerating all schemas", "commit": "e86794d" },
+        { "description": "genpandoc CLI tool for Pandoc markdown generation", "commit": "5a60685" },
+        { "description": "MkDocs documentation site with Material theme" },
+        { "description": "Three validation presets: Default, Strict, SixSigma", "commit": "c0784d5" }
+      ],
+      "documentation": [
+        { "description": "DMAIC examples for manufacturing, software development, and customer service", "commit": "cd5d04b" },
+        { "description": "Complete MkDocs documentation with framework guides, CLI reference, and API docs" },
+        { "description": "Release notes moved to docs/releases/" }
+      ],
+      "changed": [
+        { "description": "Format OKR code with gofmt", "commit": "f01b14e" }
+      ],
+      "dependencies": [
+        { "description": "Update dependencies", "commit": "8de77f6" },
+        { "description": "Add github.com/invopop/jsonschema v0.15.0 for schema generation" }
+      ]
+    },
     {
       "version": "v0.1.0",
       "date": "2026-01-25",
@@ -22,7 +54,7 @@
         { "description": "Three built-in themes: `default`, `corporate`, `minimal`" },
         { "description": "JSON Schema (Draft-07) for V2MOM document validation" },
         { "description": "CLI commands: `v2mom init`, `v2mom validate`, `v2mom generate marp`" },
-        { "description": "Example documents: product-v2mom.json, minimal-v2mom.json, agentplexus-v2mom.json" }
+        { "description": "Example documents: product-v2mom.json, minimal-v2mom.json" }
       ],
       "documentation": [
         { "description": "README with quick start guide, CLI reference, and library usage examples" },
